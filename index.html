@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stealth & Co.</title>
+  <title>Stealth & Co. | Strategy in Silence</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-    body { background: #0e0e0e; color: #f5f5f5; }
-    header { padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; }
-    header h1 { letter-spacing: 2px; }
-    nav a { color: #ccc; margin-left: 30px; text-decoration: none; font-size: 14px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background: #0e0e0e; color: #f5f5f5; line-height: 1.6; overflow-x: hidden; }
+    
+    header { padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; }
+    header h1 { letter-spacing: 4px; font-weight: 900; font-size: 24px; }
+    nav a { color: #ccc; margin-left: 30px; text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
     nav a:hover { color: #fff; }
 
     .hero {
-      height: 90vh;
+      height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(135deg, #000, #1a1a1a);
+      background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
     }
-    .hero h2 { font-size: 56px; margin-bottom: 20px; }
+    .hero h2 { font-size: 64px; margin-bottom: 20px; font-weight: 800; }
     .hero p { font-size: 18px; color: #bbb; max-width: 600px; margin: auto; }
     .hero button {
       margin-top: 30px;
@@ -30,25 +31,72 @@
       border: none;
       cursor: pointer;
       font-weight: bold;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.3s;
     }
+    .hero button:hover { background: #ccc; transform: translateY(-2px); }
 
-    section { padding: 80px 60px; }
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    section { padding: 100px 60px; }
+    
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
     .card {
       background: #151515;
-      padding: 30px;
+      padding: 40px;
       border: 1px solid #222;
+      transition: 0.3s;
     }
-    .card h3 { margin-bottom: 15px; }
-    .card p { color: #aaa; font-size: 14px; }
+    .card:hover { border-color: #555; background: #1a1a1a; }
+    .card h3 { margin-bottom: 15px; letter-spacing: 1px; }
+    .card p { color: #aaa; font-size: 15px; }
+
+    /* The Evidence Section for your Image */
+    .evidence-section {
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+    .evidence-text { max-width: 500px; }
+    .evidence-text h2 { font-size: 42px; margin-bottom: 20px; }
+    
+    .polaroid-frame {
+      background: #fdfdfd;
+      padding: 15px 15px 60px 15px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+      transform: rotate(-2deg);
+      max-width: 380px;
+      transition: 0.5s ease-in-out;
+    }
+    .polaroid-frame:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+    .polaroid-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: sepia(20%) contrast(1.1);
+    }
+    .polaroid-caption {
+      color: #222;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+      margin-top: 25px;
+      border-top: 1px dashed #ccc;
+      padding-top: 10px;
+    }
 
     footer {
-      padding: 40px 60px;
+      padding: 60px;
       text-align: center;
       background: #000;
-      color: #777;
-      font-size: 14px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid #222;
     }
   </style>
 </head>
@@ -57,48 +105,62 @@
 <header>
   <h1>STEALTH & CO.</h1>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">About</a>
+    <a href="#">Strategy</a>
+    <a href="#">Intelligence</a>
+    <a href="#">Dossier</a>
     <a href="#">Contact</a>
   </nav>
 </header>
 
 <div class="hero">
   <div>
-    <h2>Operate Quietly. Win Loudly.</h2>
+    <h2>Operate Quietly.<br>Win Loudly.</h2>
     <p>A premium consulting & strategy firm built for brands that move in silence and scale with intent.</p>
-    <button>Discover More</button>
+    <button>Enter the Vault</button>
   </div>
 </div>
 
-<section>
-  <h2 style="margin-bottom: 40px;">Our Services</h2>
+<section id="services">
+  <h2 style="margin-bottom: 50px; text-align: center; font-size: 36px;">Core Competencies</h2>
   <div class="services">
     <div class="card">
       <h3>Strategy Consulting</h3>
-      <p>Data-backed strategies designed to give you an unfair competitive advantage.</p>
+      <p>Data-backed movements designed to give you an unfair competitive advantage in crowded markets.</p>
     </div>
     <div class="card">
       <h3>Market Intelligence</h3>
-      <p>Deep research, trend mapping, and competitor analysis across industries.</p>
+      <p>Deep-web research, trend mapping, and competitor analysis conducted under the radar.</p>
     </div>
     <div class="card">
-      <h3>Digital Transformation</h3>
-      <p>Helping businesses adopt technology without losing strategic focus.</p>
+      <h3>Crisis Management</h3>
+      <p>Neutralizing threats before they become public knowledge. Discretion is our primary product.</p>
     </div>
   </div>
 </section>
 
-<section style="background:#111;">
-  <h2 style="margin-bottom: 20px;">About Stealth & Co.</h2>
-  <p style="max-width:700px;color:#aaa;">
-    Stealth & Co. is a fictional elite advisory firm specializing in confidential growth strategies, market entry planning, and executive-level consulting. We believe the best moves are made quietly.
-  </p>
+<section class="evidence-section">
+  <div class="evidence-text">
+    <span style="color: #666; text-transform: uppercase; letter-spacing: 3px;">Classified Information</span>
+    <h2>The Mastermind</h2>
+    <p style="color: #aaa; margin-bottom: 20px;">
+      Every successful operation has a ghost in the machine. Our founder has been "apprehended" by the highest standards of corporate excellence. 
+    </p>
+    <p style="color: #aaa;">
+      At Stealth & Co., we believe that personality and professionalism aren't mutually exclusive. We bring a sharp mind and a sharper suit to every boardroom.
+    </p>
+  </div>
+
+  <div class="polaroid-frame">
+    <img src="Screenshot_20260203_183914_WhatsApp.jpg" alt="Suspect: Founder">
+    <div class="polaroid-caption">
+      EXHIBIT A: THE SUSPECT
+    </div>
+  </div>
 </section>
 
 <footer>
-  © 2026 Stealth & Co. | This is a dummy website for demonstration purposes
+  <p>© 2026 STEALTH & CO. ADVISORY | ALL RIGHTS RESERVED</p>
+  <p style="margin-top: 10px; opacity: 0.5;">DECRYPTING SUCCESS SINCE 2024</p>
 </footer>
 
 </body>
